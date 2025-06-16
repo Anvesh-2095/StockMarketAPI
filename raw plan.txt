@@ -1,0 +1,18 @@
+use this chatGPT thread: https://chatgpt.com/c/684addc1-dbf4-8010-8a04-a9e7a6ad9553
+
+% ROCE: (Operating Income / Capital Employed) * 100%
+see first occurrence only for all three
+Operating Income: financials : stockFinancialMap : INC : OperatingIncome
+Capital Employed = Total Assets - Current Liabilities
+Total Assets: financials : stockFinancialMap : BAL : Total Assets
+Current Liabilities: financials : stockFinancialMap : BAL : Total Current Liabilities
+
+
+% Compounded Sales Growth =( (final year revenue / initial year revenue) ^ (1 / number of years) - 1) * 100%
+revenue: financials : stockFinancialMap : INC : Revenue
+
+% Compounded Profit Growth =( (final year net profit / initial year net profit) ^ (1 / number of years) - 1) * 100%
+net profit: financials : stockFinancialMap : INC : Net Income
+
+Revenue Growth = (final year revenue - initial year revenue) / initial year revenue * 100%
+
