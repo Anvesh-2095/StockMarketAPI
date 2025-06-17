@@ -1,13 +1,11 @@
 from fastapi import FastAPI
-
+from .routers import data, plot, screener
 app = FastAPI()
-
+app.include_router(data.router)
+app.include_router(plot.router)
+app.include_router(screener.router)
 
 @app.get("/")
-async def root():
+def root():
     return {"message": "Hello World"}
 
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}

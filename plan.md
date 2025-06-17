@@ -28,7 +28,7 @@
 15. Share Holding Pattern: FII : shareholding : FII : there are 4 values for previous 4 quarters
 16. Share Holding Pattern: Mutual Funds / DII : shareholding : MF : there are 4 values for previous 4 quarters
 17. Share Holding Pattern: Public : shareholding : others : there are 4 values for previous 4 quarters
-18. Revenue Growth : see raw plan.txt
+18. Revenue Growth : see raw plan.txt -- 5 years
 19. Borrow : stockFinancialData : stockFinancialMap : BAL : totalDebt
 20. EPS Growth : keyMetrics : growth : earningsPerShareGrowthMostRecentFiscalYear, 5years, trailing twelve months, 3 yr
 21. industry : industry
