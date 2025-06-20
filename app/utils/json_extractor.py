@@ -1,4 +1,5 @@
 from datetime import date
+from platform import python_revision
 from typing import Optional, List
 
 from .. import models
@@ -44,8 +45,8 @@ def extract_stock_from_json(data: dict) -> models.Stocks:
     PBRatio: float = peer_match.get('priceToBookValueRatio', 0.0)
     debt_to_equity: float = peer_match.get('ltDebtPerEquityMostRecentFiscalYear', 0.0)
     market_cap: float = peer_match.get('marketCap', 0.0)
-    _52_week_high: float = peer_match.get(data['yearHigh'])
-    _52_week_low: float = peer_match.get(data['yearLow'])
+    prev_52_week_high: float = data['yearHigh'] or 0.0
+    prev_52_week_low: float = data['yearLow'] or 0.0
 
     operating_income: float = get_value(most_recent, 'INC', 'OperatingIncome') or 0.0
     total_assets: float = get_value(most_recent, 'BAL', 'TotalAssets') or 0.0
@@ -73,10 +74,10 @@ def extract_stock_from_json(data: dict) -> models.Stocks:
 
     ROE: float = peer_match.get('returnOnAverageEquityTrailing12Month', 0.0)
 
-    shareholding_pattern_promoter: List[models.ShareholdingEntry] = extract_shareholding(data, "Promoters")
+    shareholding_pattern_promoter: List[models.ShareholdingEntry] = extract_shareholding(data, "Promoter")
     shareholding_pattern_fii: List[models.ShareholdingEntry] = extract_shareholding(data, "FII")
     shareholding_pattern_mf: List[models.ShareholdingEntry] = extract_shareholding(data, "MF")
-    shareholding_pattern_others: List[models.ShareholdingEntry] = extract_shareholding(data, "Others")
+    shareholding_pattern_others: List[models.ShareholdingEntry] = extract_shareholding(data, "Other")
 
     return models.Stocks(
         name=name,
@@ -90,8 +91,8 @@ def extract_stock_from_json(data: dict) -> models.Stocks:
         ROCE=ROCE,
         ROE=ROE,
         market_cap=market_cap,
-        _52_week_high=_52_week_high,
-        _52_week_low=_52_week_low,
+        prev_52_week_high=prev_52_week_high,
+        prev_52_week_low=prev_52_week_low,
         compounded_sales_growth=compounded_sales_growth,
         compounded_profit_growth=compounded_profit_growth,
         shareholding_pattern_promoter=shareholding_pattern_promoter,

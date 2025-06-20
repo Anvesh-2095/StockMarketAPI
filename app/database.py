@@ -1,22 +1,23 @@
 import mysql.connector
+from .config import settings
 
 # Establish connection
 connection = mysql.connector.connect(
-    host="localhost",       # Replace with your database host
-    user="your_username",   # Replace with your MySQL username
-    password="your_password", # Replace with your MySQL password
-    database="your_database"  # Replace with your database name
+    host=settings.DB_HOST,
+    user=settings.DB_USER,
+    password=settings.DB_PASSWORD,
+    database=settings.DB_NAME
 )
 
 # Create a cursor object
 cursor = connection.cursor()
 
-# Execute a query
-cursor.execute("SELECT * FROM your_table")  # Replace with your table name
-
-# Fetch and print results
-for row in cursor.fetchall():
-    print(row)
+# # Execute a query
+# cursor.execute("SELECT * FROM your_table")  # Replace with your table name
+#
+# # Fetch and print results
+# for row in cursor.fetchall():
+#     print(row)
 
 # Close the connection
 cursor.close()

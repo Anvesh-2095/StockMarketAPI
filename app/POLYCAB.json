@@ -1,0 +1,95 @@
+{
+  "name": "Polycab India Ltd",
+  "short_code": "POLYCAB",
+  "industry": "Electronic Instr. \u0026 Controls",
+  "nse_price": 6000.5,
+  "bse_price": 6011.95,
+  "PERatio": 44.63,
+  "PBRatio": 9.17,
+  "debt_to_equity": 1.15,
+  "ROCE": 25.995776894526628,
+  "ROE": 22.43,
+  "market_cap": 90450.34,
+  "prev_52_week_high": 7607.15,
+  "prev_52_week_low": 4557.45,
+  "compounded_sales_growth": 300.7287339343227,
+  "compounded_profit_growth": 269.96153846153845,
+  "shareholding_pattern_promoter": [
+    {
+      "date": "2024-06-30",
+      "percentage": 65.02
+    },
+    {
+      "date": "2024-09-30",
+      "percentage": 63.06
+    },
+    {
+      "date": "2024-12-31",
+      "percentage": 63.05
+    },
+    {
+      "date": "2025-03-31",
+      "percentage": 63.04
+    }
+  ],
+  "shareholding_pattern_fii": [
+    {
+      "date": "2024-06-30",
+      "percentage": 13.62
+    },
+    {
+      "date": "2024-09-30",
+      "percentage": 13.48
+    },
+    {
+      "date": "2024-12-31",
+      "percentage": 12.75
+    },
+    {
+      "date": "2025-03-31",
+      "percentage": 11.11
+    }
+  ],
+  "shareholding_pattern_mf": [
+    {
+      "date": "2024-06-30",
+      "percentage": 5.26
+    },
+    {
+      "date": "2024-09-30",
+      "percentage": 7.68
+    },
+    {
+      "date": "2024-12-31",
+      "percentage": 8.67
+    },
+    {
+      "date": "2025-03-31",
+      "percentage": 8.28
+    }
+  ],
+  "shareholding_pattern_others": [
+    {
+      "date": "2024-06-30",
+      "percentage": 16.1
+    },
+    {
+      "date": "2024-09-30",
+      "percentage": 15.78
+    },
+    {
+      "date": "2024-12-31",
+      "percentage": 15.53
+    },
+    {
+      "date": "2025-03-31",
+      "percentage": 17.57
+    }
+  ],
+  "revenue": 22408.31,
+  "revenue_growth": 300.72873393432275,
+  "borrow": 1508.67,
+  "EPS_growth": 269.0016547159405,
+  "EPS": 133.8,
+  "net_profit": 2019.99
+}

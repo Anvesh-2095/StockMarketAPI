@@ -8,7 +8,6 @@ class ShareholdingEntry(BaseModel):
     date: date
     percentage: float
 
-@dataclass
 class Stocks(BaseModel):
     name: str
     short_code: str
@@ -21,8 +20,8 @@ class Stocks(BaseModel):
     ROCE: float
     ROE: float
     market_cap: float
-    _52_week_high: float
-    _52_week_low: float
+    prev_52_week_high: float
+    prev_52_week_low: float
     compounded_sales_growth: float
     compounded_profit_growth: float
     shareholding_pattern_promoter: List[ShareholdingEntry]
