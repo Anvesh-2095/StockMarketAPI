@@ -2,7 +2,7 @@ import mysql.connector
 from .config import settings
 
 # Establish connection
-connection = mysql.connector.connect(
+conn = mysql.connector.connect(
     host=settings.DB_HOST,
     user=settings.DB_USER,
     password=settings.DB_PASSWORD,
@@ -10,7 +10,7 @@ connection = mysql.connector.connect(
 )
 
 # Create a cursor object
-cursor = connection.cursor()
+cursor = conn.cursor()
 
 # # Execute a query
 # cursor.execute("SELECT * FROM your_table")  # Replace with your table name
@@ -20,5 +20,5 @@ cursor = connection.cursor()
 #     print(row)
 
 # Close the connection
-cursor.close()
-connection.close()
+# cursor.close()
+# conn.close()

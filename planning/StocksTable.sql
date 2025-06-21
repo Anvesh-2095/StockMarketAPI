@@ -1,5 +1,5 @@
 -- This SQL script creates a database schema for managing stock data, including stock details and shareholding information.
-CREATE TABLE stocks (
+CREATE TABLE IF NOT EXISTS stocks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     short_code VARCHAR(50) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE stocks (
     recorded_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE shareholding_promoter (
+CREATE TABLE IF NOT EXISTS shareholding_promoter (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock_id INT,
     report_date DATE,
@@ -34,7 +34,7 @@ CREATE TABLE shareholding_promoter (
     FOREIGN KEY (stock_id) REFERENCES stocks(id) ON DELETE CASCADE
 );
 
-CREATE TABLE shareholding_fii (
+CREATE TABLE IF NOT EXISTS shareholding_fii (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock_id INT,
     report_date DATE,
@@ -43,7 +43,7 @@ CREATE TABLE shareholding_fii (
     FOREIGN KEY (stock_id) REFERENCES stocks(id) ON DELETE CASCADE
 );
 
-CREATE TABLE shareholding_mf (
+CREATE TABLE IF NOT EXISTS shareholding_mf (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock_id INT,
     report_date DATE,
@@ -52,11 +52,15 @@ CREATE TABLE shareholding_mf (
     FOREIGN KEY (stock_id) REFERENCES stocks(id) ON DELETE CASCADE
 );
 
-CREATE TABLE shareholding_others (
+CREATE TABLE IF NOT EXISTS shareholding_others (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stock_id INT,
     report_date DATE,
     percentage FLOAT,
     recorded_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (stock_id) REFERENCES stocks(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS shares_to_fetch (
+    name VARCHAR(255) PRIMARY KEY
 );
