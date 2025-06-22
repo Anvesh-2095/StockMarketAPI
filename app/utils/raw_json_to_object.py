@@ -1,5 +1,4 @@
 from datetime import date
-from platform import python_revision
 from typing import Optional, List
 
 from .. import models

@@ -9,7 +9,7 @@ from app.models import ShareholdingEntry
 from ..config import settings
 from .. import models, database
 from ..database import conn, cursor
-from . import json_to_object
+from . import raw_json_to_object
 
 # TODO: Add error handling and logging
 # TODO: Add a way to fetch multiple stocks at once to optimize performance
