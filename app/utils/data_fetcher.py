@@ -37,7 +37,7 @@ def fetch_and_store_data(name: str = "POLYCAB"):
     if response.status_code == 200:
         data = response.json()
         # print(f"Data fetched for {name} at {datetime.now(pytz.timezone('Asia/Kolkata'))}: {data}")
-        stock: models.Stocks = json_extractor.extract_stock_from_json(data)
+        stock: models.Stocks = raw_json_to_object.extract_stock_from_json(data)
 
         sql = """
         INSERT INTO stocks ( 

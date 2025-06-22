@@ -1,11 +1,11 @@
 import json
 from pydantic import BaseModel
-from datetime import date
+from datetime import date, datetime
 from typing import List, Optional
 from dataclasses import dataclass
 
 class ShareholdingEntry(BaseModel):
-    date: date
+    date: datetime
     percentage: float
 
 class Stocks(BaseModel):

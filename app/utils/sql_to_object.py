@@ -2,6 +2,8 @@ from typing import List
 
 from .. import models
 from ..database import conn, cursor
+from ..models import Stocks
+
 
 def get_shareholding_data(stock_id: int, table: str) -> List[models.ShareholdingEntry]:
     """
@@ -19,13 +21,13 @@ def get_shareholding_data(stock_id: int, table: str) -> List[models.Shareholding
 
     return [
         models.ShareholdingEntry(
-            date=row[1],
-            percentage=row[2]
+            date=row[2],
+            percentage=row[3]
         ) for row in rows
     ] if rows else []
 
 
-def get_one_obj(sql: str) -> models.Stocks:
+def get_one_obj(sql: str) -> Stocks | None:
     """
     Convert SQL query result to Stocks object.
 
@@ -35,9 +37,9 @@ def get_one_obj(sql: str) -> models.Stocks:
     Returns:
         models.Stocks: Stocks object populated with data from the SQL query.
     """
+
     cursor.execute(sql)
     row = cursor.fetchone()
-
     if not row:
         return None
 
