@@ -1,0 +1,48 @@
+from xml.sax.handler import all_features
+
+plot_indicators_list = [
+    "nse_price",
+    "bse_price",
+    "PERatio",
+    "PBRatio",
+    "debt_to_equity",
+    "ROCE",
+    "ROE",
+    "market_cap",
+    "compounded_sales_growth",
+    "compounded_profit_growth",
+    "revenue",
+    "revenue_growth",
+    "borrow",
+    "EPS_growth",
+    "EPS",
+    "net_profit"
+]
+
+all_features_list = [
+    "name",
+    "short_code",
+    "industry",
+    "nse_price",
+    "bse_price",
+    "PERatio",
+    "PBRatio",
+    "debt_to_equity",
+    "ROCE",
+    "ROE",
+    "market_cap",
+    "prev_52_week_high",
+    "prev_52_week_low",
+    "compounded_sales_growth",
+    "compounded_profit_growth",
+    "shareholding_pattern_promoter",
+    "shareholding_pattern_fii",
+    "shareholding_pattern_mf",
+    "shareholding_pattern_others",
+    "revenue",
+    "revenue_growth",
+    "borrow",
+    "EPS_growth",
+    "EPS",
+    "net_profit",
+]

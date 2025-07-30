@@ -1,11 +1,13 @@
 from typing import List, Optional
 from datetime import datetime, timedelta, timezone
 from fastapi import APIRouter, HTTPException, status, Query, Body
+from pyexpat import features
+
 from .. import models
 from fastapi.responses import JSONResponse
 
 from ..models import PlotRequest
-from ..utils import draw_plot
+from ..utils import draw_plot, features_list
 router = APIRouter(
     prefix="/plot",
 )
@@ -35,6 +37,6 @@ def get_plot(name: str, indicators: PlotRequest,  start_date: Optional[str] = No
     # res = [draw_plot.get_plot(name, indicator, start_date, end_date) for indicator in indicators.indicators]
     res = []
     for indicator in indicators.indicators:
-        if indicator and indicator in draw_plot.list:
+        if indicator and indicator in features_list.plot_indicators_list:
             res.append(draw_plot.get_plot(name, indicator, start_date, end_date))
     return JSONResponse(content={"images": res})

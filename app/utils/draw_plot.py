@@ -5,25 +5,6 @@ import matplotlib.pyplot as plt
 from ..database import conn, cursor
 from datetime import datetime, timedelta
 
-list = [
-    "nse_price",
-    "bse_price",
-    "PERatio",
-    "PBRatio",
-    "debt_to_equity",
-    "ROCE",
-    "ROE",
-    "market_cap",
-    "compounded_sales_growth",
-    "compounded_profit_growth",
-    "revenue",
-    "revenue_growth",
-    "borrow",
-    "EPS_growth",
-    "EPS",
-    "net_profit"
-]
-
 def get_plot(name: str, indicator: str, start_date: datetime, end_date: datetime) -> str:
     """
     Generate a plot for the given name and indicator within the specified date range.
