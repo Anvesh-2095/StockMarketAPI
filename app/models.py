@@ -44,3 +44,6 @@ class FilteredStocksResponse(BaseModel):
     industry: str
     nse_price: float
     bse_price: float
+
+class PlotRequest(BaseModel):
+    indicators: List[str]

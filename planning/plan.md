@@ -1,4 +1,5 @@
 ## Proposed Routes
+
 1. get stock info
    - Input: stock name or short code
    - Output: stock details including all the above features
@@ -11,6 +12,7 @@
    - will set up a minimum window of a week's data for the graph
 
 ### Features of stocks available for filtering:
+
 1. Name
 2. Short code
 3. Market Cap : stockDetailsReusableData : marketCap
@@ -36,3 +38,11 @@
 23. Net Profit: financials : stockFinancialMap : INC : Net Income
 24. Revenue: financials : stockFinancialMap : INC : Revenue
 25. EPS: financials : stockFinancialMap : INC : DilutedEPSExcludingExtraOrdItems
+
+
+
+
+
+api site: https://indianapi.in/indian-stock-market
+
+api docs: [How to Use the Indian Stock Exchange API](https://indianapi.in/documentation/indian-stock-market)

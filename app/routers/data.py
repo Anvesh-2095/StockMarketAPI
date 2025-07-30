@@ -1,11 +1,12 @@
 from datetime import datetime
 from .. import models
 from fastapi import APIRouter, HTTPException
-from ..database import conn, cursor
+# from ..database import conn, cursor
 from ..utils import sql_to_object
 
 router = APIRouter(
     prefix="/data",
+    tags=["data"],
 )
 
 # TODO: make sql strings more secure against SQL injection

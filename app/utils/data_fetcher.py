@@ -33,6 +33,14 @@ def fetch_and_store_data(name: str = "POLYCAB"):
     header = {
         "X-Api-Key": settings.API_KEY
     }
+
+    sql = """SELECT * FROM stocks WHERE name = %s or short_code = %s and DATE(recorded_at) = DATE(NOW())"""
+    cursor.execute(sql, (name, name))
+    existing_stock = cursor.fetchone()
+    if existing_stock:
+        print(f"Data for {name} already exists in the database. Skipping fetch.")
+        return
+
     response = httpx.get(f"https://stock.indianapi.in/stock?name={name}", headers=header)
     if response.status_code == 200:
         data = response.json()
@@ -123,4 +131,4 @@ scheduler.add_job(
 scheduler.start()
 
 if __name__ == "__main__":
-    fetch_and_store_data()
+    fetch_and_store_data_all()
